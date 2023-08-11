@@ -4,12 +4,18 @@
     "es6": true,
     "node": true
   },
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "parserOptions": {
     "ecmaVersion": 12,
     "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
+    },
+    "requireConfigFile": false,
+    "babelOptions": {
+      "babelrc": false,
+      "configFile": false,
+      "presets": ["@babel/preset-react"]
     }
   },
   "settings": {
@@ -20,16 +26,8 @@
   "plugins": ["unused-imports"],
   "extends": ["eslint:recommended", "plugin:react/recommended"],
   "rules": {
-    // "eqeqeq": "error",
     "semi": ["error", "always"],
-    "indent": [
-      "error",
-      2,
-      {
-        "ignoredNodes": ["TemplateLiteral"],
-        "SwitchCase": 1
-      }
-    ],
+    "indent": ["error", 2],
     // follow antd's style guide
     "quotes": ["error", "double"],
     "jsx-quotes": ["error", "prefer-double"],
@@ -84,6 +82,12 @@
       }
     ],
     "no-multi-spaces": ["error", { "ignoreEOLComments": true }],
+    "react/no-unknown-property": [
+      "error",
+      {
+        "ignore": ["css"]
+      }
+    ],
     "unused-imports/no-unused-imports": "error",
     "unused-imports/no-unused-vars": [
       "error",
@@ -94,17 +98,15 @@
         "argsIgnorePattern": "^_"
       }
     ],
+    "no-unused-vars": "off",
+    "react/no-deprecated": "error",
+    "react/jsx-key": "error",
+    "no-console": "error",
+    "eqeqeq": "error",
     "keyword-spacing": "error",
-    
-
     "react/prop-types": "off",
     "react/display-name": "off",
     "react/react-in-jsx-scope": "off",
-
-    // don't use strict mod now, otherwise there are a lot of errors in the codebase
-    "no-unused-vars": "off",
-    "react/no-deprecated": "warn",
-    "no-case-declarations": "off",
-    "react/jsx-key": "warn"
+    "no-case-declarations": "off"
   }
 }

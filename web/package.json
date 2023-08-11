@@ -3,39 +3,39 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@ant-design/icons": "^4.6.2",
-    "@craco/craco": "^6.1.1",
+    "@ant-design/icons": "^4.7.0",
+    "@craco/craco": "^6.4.5",
     "@crowdin/cli": "^3.6.4",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "antd": "^4.16.8",
+    "antd": "5.2.3",
     "braft-editor": "^2.3.9",
     "browser-image-size": "^1.1.0",
     "casdoor-js-sdk": "^0.5.1",
     "codemirror": "^5.54.0",
-    "craco-less": "^1.17.1",
+    "craco-less": "^2.0.0",
     "i18next": "^19.6.0",
     "identicon.js": "^2.3.3",
     "inline-attachment": "^2.0.3",
     "jquery": "^3.5.1",
     "js-md5": "^0.7.3",
     "lodash": "^4.17.20",
-    "moment": "^2.26.0",
+    "moment": "^2.29.4",
     "pangu": "^4.0.7",
     "rc-collapse": "^2.0.0",
     "re-resizable": "^6.5.4",
-    "react": "^17.0.2",
+    "react": "^18.2.0",
     "react-codemirror2": "^7.2.1",
     "react-color": "^2.18.1",
-    "react-dom": "^17.0.2",
+    "react-dom": "^18.2.0",
     "react-dropzone": "^11.0.2",
     "react-github-corner": "^2.3.0",
     "react-helmet": "^6.1.0",
     "react-i18next": "^11.7.0",
     "react-markdown": "^4.3.1",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
+    "react-router-dom": "^5.3.3",
+    "react-scripts": "5.0.1",
     "react-scroll": "^1.7.16",
     "react-select2-wrapper": "^1.0.4-beta6",
     "react-tagsinput": "^3.19.0",
@@ -46,9 +46,10 @@
     "build": "craco build",
     "test": "craco test",
     "eject": "craco eject",
-    "lint:all": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
     "crowdin:sync": "crowdin upload && crowdin download",
-    "lint": "eslint --fix ."
+    "preinstall": "node -e \"if (process.env.npm_execpath.indexOf('yarn') === -1) throw new Error('Use yarn for installing: https://yarnpkg.com/en/docs/install')\"",
+    "fix": "eslint --fix src/**/*.{js,jsx,ts,tsx}",
+    "lint:css": "stylelint src/**/*.{css,less} --fix"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -66,22 +67,29 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^7.11.0",
-    "eslint-plugin-react": "^7.30.1",
+    "@babel/core": "^7.18.13",
+    "@babel/eslint-parser": "^7.18.9",
+    "@babel/preset-react": "^7.18.6",
+    "eslint": "8.22.0",
+    "eslint-plugin-react": "^7.31.1",
     "eslint-plugin-unused-imports": "^2.0.0",
     "husky": "^4.3.8",
-    "lint-staged": "^10.5.3",
-    "prettier": "^2.2.1"
+    "lint-staged": "^13.0.3",
+    "stylelint": "^14.11.0",
+    "stylelint-config-recommended-less": "^1.0.4",
+    "stylelint-config-standard": "^28.0.0"
+  },
+  "lint-staged": {
+    "src/**/*.{css,less}": [
+      "stylelint --fix"
+    ],
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ]
   },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
-  },
-  "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "prettier --write --print-width 255",
-      "eslint --fix ."
-    ]
   }
 }
