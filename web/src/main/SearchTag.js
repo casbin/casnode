@@ -56,6 +56,7 @@ class SearchTag extends React.Component {
   renderTag() {
     return (
       <div className={`box ${this.state.tagId}`}>
+        {/* eslint-disable-next-line react/no-unknown-property */}
         <div className="cell" align="center" style={{border: 0}}>
           <div className="header">
             <Link to="/">{Setting.getForumName()}</Link> <span className="chevron">&nbsp;›&nbsp;</span>

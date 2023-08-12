@@ -275,26 +275,26 @@ class AdminTranslation extends React.Component {
 
   changeEvent(event) {
     switch (event) {
-      case "config":
-        this.getAll();
-        break;
-      case "create":
-        this.setState({
-          form: {
-            id: "",
-            name: "",
-            translator: "",
-            key: "",
-            enable: false,
-            visible: false,
-          },
-        });
-        break;
-      case "manage":
-        this.getAll();
-        break;
-      default:
-        break;
+    case "config":
+      this.getAll();
+      break;
+    case "create":
+      this.setState({
+        form: {
+          id: "",
+          name: "",
+          translator: "",
+          key: "",
+          enable: false,
+          visible: false,
+        },
+      });
+      break;
+    case "manage":
+      this.getAll();
+      break;
+    default:
+      break;
     }
 
     this.setState({
@@ -391,232 +391,232 @@ class AdminTranslation extends React.Component {
 
   render() {
     switch (this.state.event) {
-      case "config":
-        return this.renderFormBox(
-          <div className="box">
-            {this.renderProblem()}
-            {this.state.message !== "" ? (
-              <div className="message" onClick={() => this.clearMessage()}>
-                <li className="fa fa-exclamation-triangle" />
+    case "config":
+      return this.renderFormBox(
+        <div className="box">
+          {this.renderProblem()}
+          {this.state.message !== "" ? (
+            <div className="message" onClick={() => this.clearMessage()}>
+              <li className="fa fa-exclamation-triangle" />
                 &nbsp; {this.state.message}
-              </div>
-            ) : null}
-            <div className="inner">
-              <table cellPadding="5" cellSpacing="0" border="0" width="100%">
-                <tbody>
-                  <tr>
-                    <td width={Setting.PcBrowser ? "120" : "90"} align="right">
-                      {i18next.t("translator:Translation Platform")}
-                    </td>
-                    <td width="auto" align="left">
-                      {this.renderSelectPlatform()}
-                    </td>
-                  </tr>
-                  <tr>
-                    <td width={Setting.PcBrowser ? "120" : "90"} align="right">
-                      {i18next.t("translator:Key")}
-                    </td>
-                    <td width="auto" align="left">
-                      <input
-                        onChange={(event) => {
-                          const targetVal = event.target.value;
-                          this.setState((prevState) => {
-                            prevState.form.key = targetVal;
-                            return prevState;
-                          });
-                        }}
-                        value={this.state.form?.key}
-                        style={{width: 300}}
-                      />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td width={Setting.PcBrowser ? "120" : "90"} align="right">
-                      {i18next.t("translator:Visible")}
-                    </td>
-                    <td width="auto" align="left">
-                      <input
-                        type="radio"
-                        onClick={() => {
-                          this.setState((prevState) => {
-                            prevState.form.visible = true;
-                            return prevState;
-                          });
-                        }}
-                        checked={this.state.form?.visible}
-                        name="visible"
-                      />
-                      {i18next.t("tab:show")}{" "}
-                      <input
-                        type="radio"
-                        onClick={() => {
-                          this.setState((prevState) => {
-                            prevState.form.visible = false;
-                            return prevState;
-                          });
-                        }}
-                        checked={!this.state.form?.visible}
-                        name="visible"
-                      />
-                      {i18next.t("tab:hidden")}
-                    </td>
-                  </tr>
-                  <tr>
-                    <td width={Setting.PcBrowser ? "120" : "90"} align="right"></td>
-                    <td width="auto" align="left">
-                      <input type="submit" className="super normal button" value={i18next.t("translator:Save")} onClick={() => this.updateTranslator()} />
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
             </div>
+          ) : null}
+          <div className="inner">
+            <table cellPadding="5" cellSpacing="0" border="0" width="100%">
+              <tbody>
+                <tr>
+                  <td width={Setting.PcBrowser ? "120" : "90"} align="right">
+                    {i18next.t("translator:Translation Platform")}
+                  </td>
+                  <td width="auto" align="left">
+                    {this.renderSelectPlatform()}
+                  </td>
+                </tr>
+                <tr>
+                  <td width={Setting.PcBrowser ? "120" : "90"} align="right">
+                    {i18next.t("translator:Key")}
+                  </td>
+                  <td width="auto" align="left">
+                    <input
+                      onChange={(event) => {
+                        const targetVal = event.target.value;
+                        this.setState((prevState) => {
+                          prevState.form.key = targetVal;
+                          return prevState;
+                        });
+                      }}
+                      value={this.state.form?.key}
+                      style={{width: 300}}
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td width={Setting.PcBrowser ? "120" : "90"} align="right">
+                    {i18next.t("translator:Visible")}
+                  </td>
+                  <td width="auto" align="left">
+                    <input
+                      type="radio"
+                      onClick={() => {
+                        this.setState((prevState) => {
+                          prevState.form.visible = true;
+                          return prevState;
+                        });
+                      }}
+                      checked={this.state.form?.visible}
+                      name="visible"
+                    />
+                    {i18next.t("tab:show")}{" "}
+                    <input
+                      type="radio"
+                      onClick={() => {
+                        this.setState((prevState) => {
+                          prevState.form.visible = false;
+                          return prevState;
+                        });
+                      }}
+                      checked={!this.state.form?.visible}
+                      name="visible"
+                    />
+                    {i18next.t("tab:hidden")}
+                  </td>
+                </tr>
+                <tr>
+                  <td width={Setting.PcBrowser ? "120" : "90"} align="right"></td>
+                  <td width="auto" align="left">
+                    <input type="submit" className="super normal button" value={i18next.t("translator:Save")} onClick={() => this.updateTranslator()} />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-        );
-      case "create":
-        return this.renderFormBox(
-          <div className="box">
-            {this.renderProblem()}
-            {this.state.message !== "" ? (
-              <div className="message" onClick={() => this.clearMessage()}>
-                <li className="fa fa-exclamation-triangle" />
+        </div>
+      );
+    case "create":
+      return this.renderFormBox(
+        <div className="box">
+          {this.renderProblem()}
+          {this.state.message !== "" ? (
+            <div className="message" onClick={() => this.clearMessage()}>
+              <li className="fa fa-exclamation-triangle" />
                 &nbsp; {this.state.message}
-              </div>
-            ) : null}
-            <div className="inner">
-              <table cellPadding="5" cellSpacing="0" border="0" width="100%">
-                <tbody>
-                  <tr>
-                    <td width={Setting.PcBrowser ? "120" : "90"} align="right">
-                      {i18next.t("translator:Translation Platform ID")}
-                    </td>
-                    <td width="auto" align="left">
-                      <input
-                        onChange={(event) => {
-                          const targetVal = event.target.value;
-                          this.setState((prevState) => {
-                            prevState.form.id = targetVal;
-                            return prevState;
-                          });
-                        }}
-                        value={this.state.form.id}
-                        style={{width: 300}}
-                      />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td width={Setting.PcBrowser ? "120" : "90"} align="right">
-                      {i18next.t("translator:Translation Platform Name")}
-                    </td>
-                    <td width="auto" align="left">
-                      <input
-                        onChange={(event) => {
-                          const targetVal = event.target.value;
-                          this.setState((prevState) => {
-                            prevState.form.name = targetVal;
-                            return prevState;
-                          });
-                        }}
-                        value={this.state.form.name}
-                        style={{width: 300}}
-                      />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td width={Setting.PcBrowser ? "120" : "90"} align="right">
-                      {i18next.t("translator:Translation API")}
-                    </td>
-                    <td width="auto" align="left">
-                      {this.renderSelectAPI()}
-                    </td>
-                  </tr>
-                  <tr>
-                    <td width={Setting.PcBrowser ? "120" : "90"} align="right">
-                      {i18next.t("translator:Key")}
-                    </td>
-                    <td width="auto" align="left">
-                      <input
-                        onChange={(event) => {
-                          const targetVal = event.target.value;
-                          this.setState((prevState) => {
-                            prevState.form.key = targetVal;
-                            return prevState;
-                          });
-                        }}
-                        value={this.state.form.key}
-                        style={{width: 300}}
-                      />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td width={Setting.PcBrowser ? "120" : "90"} align="right">
-                      {i18next.t("translator:Visible")}
-                    </td>
-                    <td width="auto" align="left">
-                      <input
-                        type="radio"
-                        onClick={() => {
-                          this.setState((prevState) => {
-                            prevState.form.visible = true;
-                            return prevState;
-                          });
-                        }}
-                        checked={this.state.form.visible}
-                        name="visible"
-                      />
-                      {i18next.t("tab:show")}{" "}
-                      <input
-                        type="radio"
-                        onClick={() => {
-                          this.setState((prevState) => {
-                            prevState.form.visible = false;
-                            return prevState;
-                          });
-                        }}
-                        checked={!this.state.form.visible}
-                        name="visible"
-                      />
-                      {i18next.t("tab:hidden")}
-                    </td>
-                  </tr>
-                  <tr>
-                    <td width={Setting.PcBrowser ? "120" : "90"} align="right"></td>
-                    <td width="auto" align="left">
-                      <input type="submit" className="super normal button" value={i18next.t("translator:Save")} onClick={() => this.addTranslator()} />
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
             </div>
+          ) : null}
+          <div className="inner">
+            <table cellPadding="5" cellSpacing="0" border="0" width="100%">
+              <tbody>
+                <tr>
+                  <td width={Setting.PcBrowser ? "120" : "90"} align="right">
+                    {i18next.t("translator:Translation Platform ID")}
+                  </td>
+                  <td width="auto" align="left">
+                    <input
+                      onChange={(event) => {
+                        const targetVal = event.target.value;
+                        this.setState((prevState) => {
+                          prevState.form.id = targetVal;
+                          return prevState;
+                        });
+                      }}
+                      value={this.state.form.id}
+                      style={{width: 300}}
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td width={Setting.PcBrowser ? "120" : "90"} align="right">
+                    {i18next.t("translator:Translation Platform Name")}
+                  </td>
+                  <td width="auto" align="left">
+                    <input
+                      onChange={(event) => {
+                        const targetVal = event.target.value;
+                        this.setState((prevState) => {
+                          prevState.form.name = targetVal;
+                          return prevState;
+                        });
+                      }}
+                      value={this.state.form.name}
+                      style={{width: 300}}
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td width={Setting.PcBrowser ? "120" : "90"} align="right">
+                    {i18next.t("translator:Translation API")}
+                  </td>
+                  <td width="auto" align="left">
+                    {this.renderSelectAPI()}
+                  </td>
+                </tr>
+                <tr>
+                  <td width={Setting.PcBrowser ? "120" : "90"} align="right">
+                    {i18next.t("translator:Key")}
+                  </td>
+                  <td width="auto" align="left">
+                    <input
+                      onChange={(event) => {
+                        const targetVal = event.target.value;
+                        this.setState((prevState) => {
+                          prevState.form.key = targetVal;
+                          return prevState;
+                        });
+                      }}
+                      value={this.state.form.key}
+                      style={{width: 300}}
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td width={Setting.PcBrowser ? "120" : "90"} align="right">
+                    {i18next.t("translator:Visible")}
+                  </td>
+                  <td width="auto" align="left">
+                    <input
+                      type="radio"
+                      onClick={() => {
+                        this.setState((prevState) => {
+                          prevState.form.visible = true;
+                          return prevState;
+                        });
+                      }}
+                      checked={this.state.form.visible}
+                      name="visible"
+                    />
+                    {i18next.t("tab:show")}{" "}
+                    <input
+                      type="radio"
+                      onClick={() => {
+                        this.setState((prevState) => {
+                          prevState.form.visible = false;
+                          return prevState;
+                        });
+                      }}
+                      checked={!this.state.form.visible}
+                      name="visible"
+                    />
+                    {i18next.t("tab:hidden")}
+                  </td>
+                </tr>
+                <tr>
+                  <td width={Setting.PcBrowser ? "120" : "90"} align="right"></td>
+                  <td width="auto" align="left">
+                    <input type="submit" className="super normal button" value={i18next.t("translator:Save")} onClick={() => this.addTranslator()} />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-        );
-      case "manage":
-        return this.renderFormBox(
-          <div className="box">
-            {this.renderProblem()}
-            {this.state.message !== "" ? (
-              <div className="message" onClick={() => this.clearMessage()}>
-                <li className="fa fa-exclamation-triangle" />
+        </div>
+      );
+    case "manage":
+      return this.renderFormBox(
+        <div className="box">
+          {this.renderProblem()}
+          {this.state.message !== "" ? (
+            <div className="message" onClick={() => this.clearMessage()}>
+              <li className="fa fa-exclamation-triangle" />
                 &nbsp; {this.state.message}
-              </div>
-            ) : null}
-            <div id="all-translators">
-              {this.state.translators !== null && this.state.translators.length !== 0 ? (
-                this.state.translators.map((translator) => this.renderTranslators(translator))
-              ) : (
-                <div
-                  className="cell"
-                  style={{
-                    textAlign: "center",
-                    height: "100px",
-                    lineHeight: "100px",
-                  }}
-                >
-                  {this.state.translators === null ? i18next.t("loading:Data is loading...") : i18next.t("translator:No translator yet")}
-                </div>
-              )}
             </div>
+          ) : null}
+          <div id="all-translators">
+            {this.state.translators !== null && this.state.translators.length !== 0 ? (
+              this.state.translators.map((translator) => this.renderTranslators(translator))
+            ) : (
+              <div
+                className="cell"
+                style={{
+                  textAlign: "center",
+                  height: "100px",
+                  lineHeight: "100px",
+                }}
+              >
+                {this.state.translators === null ? i18next.t("loading:Data is loading...") : i18next.t("translator:No translator yet")}
+              </div>
+            )}
           </div>
-        );
+        </div>
+      );
     }
   }
 }

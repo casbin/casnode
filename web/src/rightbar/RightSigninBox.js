@@ -36,6 +36,7 @@ class RightSigninBox extends React.Component {
         </div>
         <div className="inner">
           <div className="sep5" />
+          {/* eslint-disable-next-line react/no-unknown-property */}
           <div align="center">
             <a href={Setting.getSignupUrl()} className="super normal button">
               {i18next.t("bar:Sign Up Now")}

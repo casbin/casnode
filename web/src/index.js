@@ -25,6 +25,7 @@ const theme = localStorage.getItem("CASNODE_THEME");
 
 loadTheme(theme);
 
+// eslint-disable-next-line react/no-deprecated
 ReactDOM.render(
   <BrowserRouter>
     <App />

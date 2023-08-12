@@ -215,70 +215,70 @@ class AdminTopic extends React.Component {
 
   renderRadioButton(type) {
     switch (type) {
-      case "sdt":
-        return (
-          <span>
-            <input type="radio" onClick={() => this.setState({sdt: 1})} checked={this.state.sdt === 1} name="sdt" />
-            {i18next.t("admin:Show")} <input type="radio" onClick={() => this.setState({sdt: 0})} checked={this.state.sdt === 0} name="sdt" />
-            {i18next.t("admin:Hidden")}
-          </span>
-        );
-      case "us":
-        return (
-          <span>
-            <input type="radio" onClick={() => this.setState({us: 1})} checked={this.state.us === 1} name="us" />
-            {i18next.t("admin:Asc")} <input type="radio" onClick={() => this.setState({us: 2})} checked={this.state.us === 2} name="us" />
-            {i18next.t("admin:Desc")} <input type="radio" onClick={() => this.setState({us: 0})} checked={this.state.us === 0} name="us" />
-            {i18next.t("admin:Ignore")}
-          </span>
-        );
-      case "cs":
-        return (
-          <span>
-            <input type="radio" onClick={() => this.setState({cs: 1})} checked={this.state.cs === 1} name="cs" />
-            {i18next.t("admin:Asc")} <input type="radio" onClick={() => this.setState({cs: 2})} checked={this.state.cs === 2} name="cs" />
-            {i18next.t("admin:Desc")} <input type="radio" onClick={() => this.setState({cs: 0})} checked={this.state.cs === 0} name="cs" />
-            {i18next.t("admin:Ignore")}
-          </span>
-        );
-      case "lrs":
-        return (
-          <span>
-            <input type="radio" onClick={() => this.setState({lrs: 1})} checked={this.state.lrs === 1} name="lrs" />
-            {i18next.t("admin:Asc")} <input type="radio" onClick={() => this.setState({lrs: 2})} checked={this.state.lrs === 2} name="lrs" />
-            {i18next.t("admin:Desc")} <input type="radio" onClick={() => this.setState({lrs: 0})} checked={this.state.lrs === 0} name="lrs" />
-            {i18next.t("admin:Ignore")}
-          </span>
-        );
-      case "rcs":
-        return (
-          <span>
-            <input type="radio" onClick={() => this.setState({rcs: 1})} checked={this.state.rcs === 1} name="rcs" />
-            {i18next.t("admin:Asc")} <input type="radio" onClick={() => this.setState({rcs: 2})} checked={this.state.rcs === 2} name="rcs" />
-            {i18next.t("admin:Desc")} <input type="radio" onClick={() => this.setState({rcs: 0})} checked={this.state.rcs === 0} name="rcs" />
-            {i18next.t("admin:Ignore")}
-          </span>
-        );
-      case "hs":
-        return (
-          <span>
-            <input type="radio" onClick={() => this.setState({hs: 1})} checked={this.state.hs === 1} name="hs" />
-            {i18next.t("admin:Asc")} <input type="radio" onClick={() => this.setState({hs: 2})} checked={this.state.hs === 2} name="hs" />
-            {i18next.t("admin:Desc")} <input type="radio" onClick={() => this.setState({hs: 0})} checked={this.state.hs === 0} name="hs" />
-            {i18next.t("admin:Ignore")}
-          </span>
-        );
-      case "fcs":
-        return (
-          <span>
-            <input type="radio" onClick={() => this.setState({fcs: 1})} checked={this.state.fcs === 1} name="fcs" />
-            {i18next.t("admin:Asc")} <input type="radio" onClick={() => this.setState({fcs: 2})} checked={this.state.fcs === 2} name="fcs" />
-            {i18next.t("admin:Desc")} <input type="radio" onClick={() => this.setState({fcs: 0})} checked={this.state.fcs === 0} name="fcs" />
-            {i18next.t("admin:Ignore")}
-          </span>
-        );
-      default:
-        return null;
+    case "sdt":
+      return (
+        <span>
+          <input type="radio" onClick={() => this.setState({sdt: 1})} checked={this.state.sdt === 1} name="sdt" />
+          {i18next.t("admin:Show")} <input type="radio" onClick={() => this.setState({sdt: 0})} checked={this.state.sdt === 0} name="sdt" />
+          {i18next.t("admin:Hidden")}
+        </span>
+      );
+    case "us":
+      return (
+        <span>
+          <input type="radio" onClick={() => this.setState({us: 1})} checked={this.state.us === 1} name="us" />
+          {i18next.t("admin:Asc")} <input type="radio" onClick={() => this.setState({us: 2})} checked={this.state.us === 2} name="us" />
+          {i18next.t("admin:Desc")} <input type="radio" onClick={() => this.setState({us: 0})} checked={this.state.us === 0} name="us" />
+          {i18next.t("admin:Ignore")}
+        </span>
+      );
+    case "cs":
+      return (
+        <span>
+          <input type="radio" onClick={() => this.setState({cs: 1})} checked={this.state.cs === 1} name="cs" />
+          {i18next.t("admin:Asc")} <input type="radio" onClick={() => this.setState({cs: 2})} checked={this.state.cs === 2} name="cs" />
+          {i18next.t("admin:Desc")} <input type="radio" onClick={() => this.setState({cs: 0})} checked={this.state.cs === 0} name="cs" />
+          {i18next.t("admin:Ignore")}
+        </span>
+      );
+    case "lrs":
+      return (
+        <span>
+          <input type="radio" onClick={() => this.setState({lrs: 1})} checked={this.state.lrs === 1} name="lrs" />
+          {i18next.t("admin:Asc")} <input type="radio" onClick={() => this.setState({lrs: 2})} checked={this.state.lrs === 2} name="lrs" />
+          {i18next.t("admin:Desc")} <input type="radio" onClick={() => this.setState({lrs: 0})} checked={this.state.lrs === 0} name="lrs" />
+          {i18next.t("admin:Ignore")}
+        </span>
+      );
+    case "rcs":
+      return (
+        <span>
+          <input type="radio" onClick={() => this.setState({rcs: 1})} checked={this.state.rcs === 1} name="rcs" />
+          {i18next.t("admin:Asc")} <input type="radio" onClick={() => this.setState({rcs: 2})} checked={this.state.rcs === 2} name="rcs" />
+          {i18next.t("admin:Desc")} <input type="radio" onClick={() => this.setState({rcs: 0})} checked={this.state.rcs === 0} name="rcs" />
+          {i18next.t("admin:Ignore")}
+        </span>
+      );
+    case "hs":
+      return (
+        <span>
+          <input type="radio" onClick={() => this.setState({hs: 1})} checked={this.state.hs === 1} name="hs" />
+          {i18next.t("admin:Asc")} <input type="radio" onClick={() => this.setState({hs: 2})} checked={this.state.hs === 2} name="hs" />
+          {i18next.t("admin:Desc")} <input type="radio" onClick={() => this.setState({hs: 0})} checked={this.state.hs === 0} name="hs" />
+          {i18next.t("admin:Ignore")}
+        </span>
+      );
+    case "fcs":
+      return (
+        <span>
+          <input type="radio" onClick={() => this.setState({fcs: 1})} checked={this.state.fcs === 1} name="fcs" />
+          {i18next.t("admin:Asc")} <input type="radio" onClick={() => this.setState({fcs: 2})} checked={this.state.fcs === 2} name="fcs" />
+          {i18next.t("admin:Desc")} <input type="radio" onClick={() => this.setState({fcs: 0})} checked={this.state.fcs === 0} name="fcs" />
+          {i18next.t("admin:Ignore")}
+        </span>
+      );
+    default:
+      return null;
     }
   }
 
@@ -405,6 +405,7 @@ class AdminTopic extends React.Component {
   }
 
   renderTopicStatus(status, homePageTopTime, tabTopTime, nodeTopTime) {
+    // eslint-disable-next-line no-console
     console.log(status);
     if (status === false) {
       status = 1;
@@ -422,18 +423,18 @@ class AdminTopic extends React.Component {
     }
 
     switch (status) {
-      case 1:
-        return <span className="gray">{i18next.t("topic:Normal")}</span>;
-      case 2:
-        return <span className="negative">{i18next.t("topic:Deleted")}</span>;
-      case 3:
-        return <span className="positive">{i18next.t("topic:Node Topping")}</span>;
-      case 4:
-        return <span className="positive">{i18next.t("topic:Tab Topping")}</span>;
-      case 5:
-        return <span className="positive">{i18next.t("topic:Homepage Topping")}</span>;
-      default:
-        return <span className="gray">{i18next.t("topic:Unknown status")}</span>;
+    case 1:
+      return <span className="gray">{i18next.t("topic:Normal")}</span>;
+    case 2:
+      return <span className="negative">{i18next.t("topic:Deleted")}</span>;
+    case 3:
+      return <span className="positive">{i18next.t("topic:Node Topping")}</span>;
+    case 4:
+      return <span className="positive">{i18next.t("topic:Tab Topping")}</span>;
+    case 5:
+      return <span className="positive">{i18next.t("topic:Homepage Topping")}</span>;
+    default:
+      return <span className="gray">{i18next.t("topic:Unknown status")}</span>;
     }
   }
 

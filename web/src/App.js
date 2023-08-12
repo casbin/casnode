@@ -14,9 +14,9 @@
 
 import React, {Component} from "react";
 import classNames from "classnames";
-import "./App.less";
 import "codemirror/lib/codemirror.css";
 import {BackTop, Spin} from "antd";
+import "./App.less";
 import * as Setting from "./Setting";
 import {Route, Switch} from "react-router-dom";
 import TopicPage from "./TopicPage";
