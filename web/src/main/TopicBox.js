@@ -365,6 +365,7 @@ class TopicBox extends React.Component {
   renderMobileButtons() {
     return (
       <div className="inner">
+        {/* eslint-disable-next-line react/no-unknown-property */}
         <div className="fr" align="right">
           {this.props.account !== undefined && this.props.account !== null ? (
             this.state.favoritesStatus ? (

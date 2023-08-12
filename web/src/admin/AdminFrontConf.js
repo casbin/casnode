@@ -138,30 +138,30 @@ class AdminFrontConf extends React.Component {
   convert(s) {
     let str;
     switch (s) {
-      case "forumName":
-        str = i18next.t("frontConf:Forum name");
-        break;
-      case "logoImage":
-        str = i18next.t("frontConf:Logo image");
-        break;
-      case "footerLogoImage":
-        str = i18next.t("frontConf:Footer Logo image");
-        break;
-      case "footerLogoUrl":
-        str = i18next.t("frontConf:Footer Logo URL");
-        break;
-      case "signinBoxStrong":
-        str = i18next.t("frontConf:Right title");
-        break;
-      case "signinBoxSpan":
-        str = i18next.t("frontConf:Right subtitle");
-        break;
-      case "footerDeclaration":
-        str = i18next.t("frontConf:Footer title");
-        break;
-      case "footerAdvise":
-        str = i18next.t("frontConf:Footer subtitle");
-        break;
+    case "forumName":
+      str = i18next.t("frontConf:Forum name");
+      break;
+    case "logoImage":
+      str = i18next.t("frontConf:Logo image");
+      break;
+    case "footerLogoImage":
+      str = i18next.t("frontConf:Footer Logo image");
+      break;
+    case "footerLogoUrl":
+      str = i18next.t("frontConf:Footer Logo URL");
+      break;
+    case "signinBoxStrong":
+      str = i18next.t("frontConf:Right title");
+      break;
+    case "signinBoxSpan":
+      str = i18next.t("frontConf:Right subtitle");
+      break;
+    case "footerDeclaration":
+      str = i18next.t("frontConf:Footer title");
+      break;
+    case "footerAdvise":
+      str = i18next.t("frontConf:Footer subtitle");
+      break;
     }
     return str;
   }

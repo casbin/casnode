@@ -73,17 +73,17 @@ class FavoritesBox extends React.Component {
   getFavoritesInfo() {
     let favoritesType;
     switch (this.state.favoritesType) {
-      case "topics":
-        favoritesType = "favor_topic";
-        break;
-      case "following":
-        favoritesType = "follow_user";
-        break;
-      case "nodes":
-        favoritesType = "favor_node";
-        break;
-      default:
-        return;
+    case "topics":
+      favoritesType = "favor_topic";
+      break;
+    case "following":
+      favoritesType = "follow_user";
+      break;
+    case "nodes":
+      favoritesType = "favor_node";
+      break;
+    default:
+      return;
     }
     FavoritesBackend.getFavorites(favoritesType, this.state.limit, this.state.page).then((res) => {
       if (res.status === "ok") {
@@ -107,7 +107,7 @@ class FavoritesBox extends React.Component {
   }
 
   renderNodes(node) {
-    if (node.nodeInfo == null) {
+    if (node.nodeInfo === null) {
       return;
     }
 
@@ -145,66 +145,66 @@ class FavoritesBox extends React.Component {
 
   render() {
     switch (this.state.favoritesType) {
-      case "nodes":
-        return (
-          <div className="box">
-            <div className="header">
-              <Link to="/">{Setting.getForumName()}</Link>
-              <span className="chevron">&nbsp;›&nbsp;</span> {i18next.t("fav:My Favorite Nodes")}
-              <div className="fr f12">
-                <span className="snow">{i18next.t("fav:Total nodes")} &nbsp;</span>
-                <strong className="gray">{this.state.favoritesNum}</strong>
-              </div>
-            </div>
-            <div id="my-nodes">
-              {this.state.favorites.map((node) => {
-                return this.renderNodes(node);
-              })}
+    case "nodes":
+      return (
+        <div className="box">
+          <div className="header">
+            <Link to="/">{Setting.getForumName()}</Link>
+            <span className="chevron">&nbsp;›&nbsp;</span> {i18next.t("fav:My Favorite Nodes")}
+            <div className="fr f12">
+              <span className="snow">{i18next.t("fav:Total nodes")} &nbsp;</span>
+              <strong className="gray">{this.state.favoritesNum}</strong>
             </div>
           </div>
-        );
-      case "topics":
-        return (
-          <div className="box">
-            <div className="header">
-              <Link to="/">{Setting.getForumName()}</Link>
-              <span className="chevron">&nbsp;›&nbsp;</span> {i18next.t("fav:My favorite topics")}
-              <div className="fr f12">
-                <span className="snow">{i18next.t("fav:Total topics")} &nbsp;</span>
-                <strong className="gray">{this.state.favoritesNum}</strong>
-              </div>
-            </div>
-            <TopicList topics={this.state.favorites} showNodeName={true} showAvatar={true} />
-            <div className="sep20" />
-            <div className="header">
-              <Link to="/">{Setting.getForumName()}</Link>
-              <span className="chevron">&nbsp;›&nbsp;</span> {i18next.t("fav:My subscribe topics")}
-              <div className="fr f12">
-                <span className="snow">{i18next.t("fav:Total topics")} &nbsp;</span>
-                <strong className="gray">{this.state.subscribesNum}</strong>
-              </div>
-            </div>
-            <TopicList topics={this.state.subscribes} showNodeName={true} showAvatar={true} />
+          <div id="my-nodes">
+            {this.state.favorites.map((node) => {
+              return this.renderNodes(node);
+            })}
           </div>
-        );
-      case "following":
-        return (
-          <div className="box">
-            <div className="header">
-              <Link to="/">{Setting.getForumName()}</Link>
-              <span className="chevron">&nbsp;›&nbsp;</span> {i18next.t("fav:Latest topics from people I followed")}
-              <div className="fr f12">
-                <span className="snow">{i18next.t("fav:Total topics")} &nbsp;</span>
-                <strong className="gray">{this.state.favoritesNum}</strong>
-              </div>
+        </div>
+      );
+    case "topics":
+      return (
+        <div className="box">
+          <div className="header">
+            <Link to="/">{Setting.getForumName()}</Link>
+            <span className="chevron">&nbsp;›&nbsp;</span> {i18next.t("fav:My favorite topics")}
+            <div className="fr f12">
+              <span className="snow">{i18next.t("fav:Total topics")} &nbsp;</span>
+              <strong className="gray">{this.state.favoritesNum}</strong>
             </div>
-            {Setting.PcBrowser ? this.showPageColumn() : null}
-            <TopicList topics={this.state.favorites} showNodeName={true} showAvatar={true} />
-            {this.showPageColumn()}
           </div>
-        );
-      default:
-        return <div className="box">{this.state.favoritesType}</div>;
+          <TopicList topics={this.state.favorites} showNodeName={true} showAvatar={true} />
+          <div className="sep20" />
+          <div className="header">
+            <Link to="/">{Setting.getForumName()}</Link>
+            <span className="chevron">&nbsp;›&nbsp;</span> {i18next.t("fav:My subscribe topics")}
+            <div className="fr f12">
+              <span className="snow">{i18next.t("fav:Total topics")} &nbsp;</span>
+              <strong className="gray">{this.state.subscribesNum}</strong>
+            </div>
+          </div>
+          <TopicList topics={this.state.subscribes} showNodeName={true} showAvatar={true} />
+        </div>
+      );
+    case "following":
+      return (
+        <div className="box">
+          <div className="header">
+            <Link to="/">{Setting.getForumName()}</Link>
+            <span className="chevron">&nbsp;›&nbsp;</span> {i18next.t("fav:Latest topics from people I followed")}
+            <div className="fr f12">
+              <span className="snow">{i18next.t("fav:Total topics")} &nbsp;</span>
+              <strong className="gray">{this.state.favoritesNum}</strong>
+            </div>
+          </div>
+          {Setting.PcBrowser ? this.showPageColumn() : null}
+          <TopicList topics={this.state.favorites} showNodeName={true} showAvatar={true} />
+          {this.showPageColumn()}
+        </div>
+      );
+    default:
+      return <div className="box">{this.state.favoritesType}</div>;
     }
   }
 }

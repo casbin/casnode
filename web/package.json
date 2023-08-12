@@ -13,6 +13,7 @@
     "braft-editor": "^2.3.9",
     "browser-image-size": "^1.1.0",
     "casdoor-js-sdk": "^0.5.1",
+    "classnames": "^2.3.2",
     "codemirror": "^5.54.0",
     "craco-less": "^2.0.0",
     "i18next": "^19.6.0",
@@ -49,7 +50,7 @@
     "crowdin:sync": "crowdin upload && crowdin download",
     "preinstall": "node -e \"if (process.env.npm_execpath.indexOf('yarn') === -1) throw new Error('Use yarn for installing: https://yarnpkg.com/en/docs/install')\"",
     "fix": "eslint --fix src/**/*.{js,jsx,ts,tsx}",
-    "lint:css": "stylelint src/**/*.{css,less} --fix"
+    "lintcss": "stylelint src/**/*.{css,scss} --fix --custom-syntax postcss-scss"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -69,12 +70,14 @@
   "devDependencies": {
     "@babel/core": "^7.18.13",
     "@babel/eslint-parser": "^7.18.9",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/preset-react": "^7.18.6",
-    "eslint": "8.22.0",
+    "eslint": "^8.47.0",
     "eslint-plugin-react": "^7.31.1",
     "eslint-plugin-unused-imports": "^2.0.0",
     "husky": "^4.3.8",
     "lint-staged": "^13.0.3",
+    "postcss-scss": "^4.0.6",
     "stylelint": "^14.11.0",
     "stylelint-config-recommended-less": "^1.0.4",
     "stylelint-config-standard": "^28.0.0"

@@ -316,20 +316,20 @@ class Header extends React.Component {
   renderSearchEngine() {
     let searchUrl;
     switch (Conf.DefaultSearchSite) {
-      case "google":
-      case "Google":
-        searchUrl = `https://www.google.com/search?q=site:${Conf.Domain}/t ${this.state.searchValue}`;
-        break;
-      case "bing":
-      case "Bing":
-        searchUrl = `https://cn.bing.com/search?q=site:${Conf.Domain}/t ${this.state.searchValue}`;
-        break;
-      case "baidu":
-      case "Baidu":
-        searchUrl = `https://www.baidu.com/s?q6=${Conf.Domain}&q3=${this.state.searchValue}`;
-        break;
-      default:
-        searchUrl = "/search?keyword=" + this.state.searchValue;
+    case "google":
+    case "Google":
+      searchUrl = `https://www.google.com/search?q=site:${Conf.Domain}/t ${this.state.searchValue}`;
+      break;
+    case "bing":
+    case "Bing":
+      searchUrl = `https://cn.bing.com/search?q=site:${Conf.Domain}/t ${this.state.searchValue}`;
+      break;
+    case "baidu":
+    case "Baidu":
+      searchUrl = `https://www.baidu.com/s?q6=${Conf.Domain}&q3=${this.state.searchValue}`;
+      break;
+    default:
+      searchUrl = "/search?keyword=" + this.state.searchValue;
     }
 
     return (

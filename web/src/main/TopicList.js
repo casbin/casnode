@@ -50,23 +50,23 @@ class TopicList extends React.Component {
   // return style according to whether it is a topped topic.
   topStyle(nodeTopTime, tabTopTime, homePageTopTime) {
     switch (this.props.topType) {
-      case "node":
-        if (nodeTopTime !== "") {
-          return this.topTopicStyle;
-        }
-        return null;
-      case "tab":
-        if (tabTopTime !== "" || homePageTopTime !== "") {
-          return this.topTopicStyle;
-        }
-        return null;
-      case "homePage":
-        if (homePageTopTime !== "") {
-          return this.topTopicStyle;
-        }
-        return null;
-      default:
-        return null;
+    case "node":
+      if (nodeTopTime !== "") {
+        return this.topTopicStyle;
+      }
+      return null;
+    case "tab":
+      if (tabTopTime !== "" || homePageTopTime !== "") {
+        return this.topTopicStyle;
+      }
+      return null;
+    case "homePage":
+      if (homePageTopTime !== "") {
+        return this.topTopicStyle;
+      }
+      return null;
+    default:
+      return null;
     }
   }
 

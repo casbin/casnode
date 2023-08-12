@@ -274,6 +274,7 @@ class NodeBox extends React.Component {
         <Link to="/">{Setting.getForumName()}</Link> <span className="chevron">&nbsp;›&nbsp;</span> {this.state.nodeInfo?.name}
         <div className="sep5"></div>
         {this.props.account !== null ? (
+        // eslint-disable-next-line react/no-unknown-property
           <div align="right">
             <input type="button" className="super normal button" value={i18next.t("node:new topic")} onClick={() => this.props.history.push(`/new/${this.state.nodeId}`)} style={{width: "100%", lineHeight: "20px"}} />
           </div>
@@ -415,6 +416,7 @@ class NodeBox extends React.Component {
         {Setting.PcBrowser ? this.showPageColumn() : null}
         <TopicList nodeId={this.state.nodeId} topics={this.state.topics} showNodeName={false} showAvatar={true} topType={"node"} />
         {this.showPageColumn()}
+        {/* eslint-disable-next-line react/no-unknown-property */}
         <div className="cell" align="center">
           <div className="fr">{`${this.state.favoritesNum} ${i18next.t("node:members have added this node to favorites")}`}</div>
           <span className="gray">{`${i18next.t("node:Topic")} ${from} ${i18next.t("node:to")} ${end} ${i18next.t("node:of all")} ${this.state.topicNum} ${i18next.t("node:topics")}`}</span>

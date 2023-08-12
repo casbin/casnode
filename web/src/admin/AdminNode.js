@@ -441,26 +441,26 @@ class AdminNode extends React.Component {
 
     let value, data;
     switch (item) {
-      case "node":
-        value = this.getIndexFromNodeId(this.state.form.parentNode);
-        data = this.state.nodes.map((node, i) => {
-          return {text: `${node.nodeInfo.name} / ${node.nodeInfo.id}`, id: i};
-        });
-        break;
-      case "tab":
-        value = this.getIndexFromTabId(this.state.form.tab);
-        data = this.state.tabs.map((tab, i) => {
-          return {text: `${tab.name} / ${tab.id}`, id: i};
-        });
-        break;
-      case "plane":
-        value = this.getIndexFromPlaneId(this.state.form.planeId);
-        data = this.state.planes.map((plane, i) => {
-          return {text: `${plane.name} / ${plane.id}`, id: i};
-        });
-        break;
-      default:
-        break;
+    case "node":
+      value = this.getIndexFromNodeId(this.state.form.parentNode);
+      data = this.state.nodes.map((node, i) => {
+        return {text: `${node.nodeInfo.name} / ${node.nodeInfo.id}`, id: i};
+      });
+      break;
+    case "tab":
+      value = this.getIndexFromTabId(this.state.form.tab);
+      data = this.state.tabs.map((tab, i) => {
+        return {text: `${tab.name} / ${tab.id}`, id: i};
+      });
+      break;
+    case "plane":
+      value = this.getIndexFromPlaneId(this.state.form.planeId);
+      data = this.state.planes.map((plane, i) => {
+        return {text: `${plane.name} / ${plane.id}`, id: i};
+      });
+      break;
+    default:
+      break;
     }
 
     return (
@@ -479,20 +479,20 @@ class AdminNode extends React.Component {
 
           const index = parseInt(s);
           switch (item) {
-            case "node":
-              const nodeId = this.state.nodes[index].nodeInfo.id;
-              this.updateFormField("parentNode", nodeId);
-              break;
-            case "tab":
-              const tab = this.state.tabs[index].id;
-              this.updateFormField("tab", tab);
-              break;
-            case "plane":
-              const planeId = this.state.planes[index].id;
-              this.updateFormField("planeId", planeId);
-              break;
-            default:
-              break;
+          case "node":
+            const nodeId = this.state.nodes[index].nodeInfo.id;
+            this.updateFormField("parentNode", nodeId);
+            break;
+          case "tab":
+            const tab = this.state.tabs[index].id;
+            this.updateFormField("tab", tab);
+            break;
+          case "plane":
+            const planeId = this.state.planes[index].id;
+            this.updateFormField("planeId", planeId);
+            break;
+          default:
+            break;
           }
         }}
         options={{

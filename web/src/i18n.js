@@ -64,7 +64,7 @@ function getBrowserLanguage() {
 
 function initLanguage() {
   let language = localStorage.getItem("language");
-  if (language === undefined || language == null) {
+  if (language === undefined || language === null) {
     if (Conf.ForceLanguage !== "") {
       language = Conf.ForceLanguage;
     } else {

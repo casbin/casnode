@@ -38,6 +38,7 @@ class SelectLanguageBox extends React.Component {
 
   render() {
     return (
+    // eslint-disable-next-line react/no-unknown-property
       <div align="center">
         <div className="box" style={{width: Setting.PcBrowser ? "600px" : "auto"}}>
           <Helmet>

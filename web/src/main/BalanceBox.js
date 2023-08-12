@@ -89,250 +89,250 @@ class BalanceBox extends React.Component {
 
   renderRecord(record) {
     switch (record?.consumptionType) {
-      case 1:
-        return (
-          <tr>
-            <td className="d">
-              <small className="gray">{Setting.getFormattedDate(record?.createdTime)}</small>
-            </td>
-            <td className="d">{i18next.t("balance:Checkin bonus")}</td>
-            <td className="d" style={{textAlign: "right"}}>
-              <span className="positive">
-                <strong>{record?.amount + ".0"}</strong>
-              </span>
-            </td>
-            <td className="d" style={{textAlign: "right"}}>
-              {record?.balance + ".0"}
-            </td>
-            <td className="d" style={{borderRight: "none"}}>
-              <span className="gray">
-                {record?.createdTime.replace(/-/g, "").substring(0, 8)} {i18next.t("balance:'s daily checkin bonus")} {record?.amount} {i18next.t("balance:copper")}
-              </span>
-            </td>
-          </tr>
-        );
-      case 2:
-        return (
-          <tr>
-            <td className="d">
-              <small className="gray">{Setting.getFormattedDate(record?.createdTime)}</small>
-            </td>
-            <td className="d">{i18next.t("balance:Received thanks")}</td>
-            <td className="d" style={{textAlign: "right"}}>
-              <span className="positive">
-                <strong>{record?.amount + ".0"}</strong>
-              </span>
-            </td>
-            <td className="d" style={{textAlign: "right"}}>
-              {record?.balance + ".0"}
-            </td>
-            <td className="d" style={{borderRight: "none"}}>
-              <span className="gray">
-                <Link to={`/member/${record?.consumerId}`}>{record?.consumerId}</Link> {i18next.t("balance:Thanks your topic")} › <Link to={`/t/${record?.objectId}`}>{pangu.spacing(record?.title)}</Link>
-              </span>
-            </td>
-          </tr>
-        );
-      case 3:
-        return (
-          <tr>
-            <td className="d">
-              <small className="gray">{Setting.getFormattedDate(record?.createdTime)}</small>
-            </td>
-            <td className="d">{i18next.t("balance:Received thanks")}</td>
-            <td className="d" style={{textAlign: "right"}}>
-              <span className="positive">
-                <strong>{record?.amount + ".0"}</strong>
-              </span>
-            </td>
-            <td className="d" style={{textAlign: "right"}}>
-              {record?.balance + ".0"}
-            </td>
-            <td className="d" style={{borderRight: "none"}}>
-              <span className="gray">
-                <Link to={`/member/${record?.consumerId}`}>{record?.consumerId}</Link> {i18next.t("balance:Thanks your reply in")} <Link to={`/t/${record?.objectId}`}>{pangu.spacing(record?.title)}</Link> {i18next.t("balance:Reply in")}
-              </span>
-            </td>
-          </tr>
-        );
-      case 4:
-        return (
-          <tr>
-            <td className="d">
-              <small className="gray">{Setting.getFormattedDate(record?.createdTime)}</small>
-            </td>
-            <td className="d">{i18next.t("balance:Send thanks")}</td>
-            <td className="d" style={{textAlign: "right"}}>
-              <span className="negative">
-                <strong>{record?.amount + ".0"}</strong>
-              </span>
-            </td>
-            <td className="d" style={{textAlign: "right"}}>
-              {record?.balance + ".0"}
-            </td>
-            <td className="d" style={{borderRight: "none"}}>
-              <span className="gray">
-                {i18next.t("balance:Thanks")} <Link to={`/member/${record?.consumerId}`}>{record?.consumerId}</Link> {i18next.t("balance:'s topic")} › <Link to={`/t/${record?.objectId}`}>{pangu.spacing(record?.title)}</Link>
-              </span>
-            </td>
-          </tr>
-        );
-      case 5:
-        return (
-          <tr>
-            <td className="d">
-              <small className="gray">{Setting.getFormattedDate(record?.createdTime)}</small>
-            </td>
-            <td className="d">{i18next.t("balance:Send thanks")}</td>
-            <td className="d" style={{textAlign: "right"}}>
-              <span className="negative">
-                <strong>{record?.amount + ".0"}</strong>
-              </span>
-            </td>
-            <td className="d" style={{textAlign: "right"}}>
-              {record?.balance + ".0"}
-            </td>
-            <td className="d" style={{borderRight: "none"}}>
-              <span className="gray">
-                {i18next.t("balance:Thanks")} <Link to={`/member/${record?.consumerId}`}>{record?.consumerId}</Link> {i18next.t("balance:'s reply")} › <Link to={`t/${record?.objectId}`}>{pangu.spacing(record?.title)}</Link>
-              </span>
-            </td>
-          </tr>
-        );
-      case 6:
-        return (
-          <tr>
-            <td className="d">
-              <small className="gray">{Setting.getFormattedDate(record?.createdTime)}</small>
-            </td>
-            <td className="d">{i18next.t("balance:Create reply")}</td>
-            <td className="d" style={{textAlign: "right"}}>
-              <span className="negative">
-                <strong>{record?.amount + ".0"}</strong>
-              </span>
-            </td>
-            <td className="d" style={{textAlign: "right"}}>
-              {record?.balance + ".0"}
-            </td>
-            <td className="d" style={{borderRight: "none"}}>
-              <span className="gray">
-                {i18next.t("balance:Created a")} {record?.length} {i18next.t("balance:characters reply")} › <Link to={`t/${record?.objectId}`}>{pangu.spacing(record?.title)}</Link>
-              </span>
-            </td>
-          </tr>
-        );
-      case 7:
-        return (
-          <tr>
-            <td className="d">
-              <small className="gray">{Setting.getFormattedDate(record?.createdTime)}</small>
-            </td>
-            <td className="d">{i18next.t("balance:Topic response bonus")}</td>
-            <td className="d" style={{textAlign: "right"}}>
-              <span className="positive">
-                <strong>{record?.amount + ".0"}</strong>
-              </span>
-            </td>
-            <td className="d" style={{textAlign: "right"}}>
-              {record?.balance + ".0"}
-            </td>
-            <td className="d" style={{borderRight: "none"}}>
-              <span className="gray">
-                {i18next.t("balance:receive")} <Link to={`/member/${record?.consumerId}`}>{record?.consumerId}</Link> {i18next.t("balance:'s reply")} › <Link to={`t/${record?.objectId}`}>{pangu.spacing(record?.title)}</Link>
-              </span>
-            </td>
-          </tr>
-        );
-      case 8:
-        return (
-          <tr>
-            <td className="d">
-              <small className="gray">{Setting.getFormattedDate(record?.createdTime)}</small>
-            </td>
-            <td className="d">{i18next.t("balance:Create topic")}</td>
-            <td className="d" style={{textAlign: "right"}}>
-              <span className="negative">
-                <strong>{record?.amount + ".0"}</strong>
-              </span>
-            </td>
-            <td className="d" style={{textAlign: "right"}}>
-              {record?.balance + ".0"}
-            </td>
-            <td className="d" style={{borderRight: "none"}}>
-              <span className="gray">
-                {i18next.t("balance:Created a")} {record?.length} {i18next.t("balance:characters topic")} › <Link to={`t/${record?.objectId}`}>{pangu.spacing(record?.title)}</Link>
-              </span>
-            </td>
-          </tr>
-        );
-      case 9:
-        return (
-          <tr>
-            <td className="d">
-              <small className="gray">{Setting.getFormattedDate(record?.createdTime)}</small>
-            </td>
-            <td className="d">{i18next.t("balance:Top topic")}</td>
-            <td className="d" style={{textAlign: "right"}}>
-              <span className="negative">
-                <strong>{record?.amount + ".0"}</strong>
-              </span>
-            </td>
-            <td className="d" style={{textAlign: "right"}}>
-              {record?.balance + ".0"}
-            </td>
-            <td className="d" style={{borderRight: "none"}}>
-              <span className="gray">
-                {i18next.t("balance:Topped topic")} <Link to={`t/${record?.objectId}`}>{pangu.spacing(record?.title)}</Link> {i18next.t("balance:Pin it to the top")}
-              </span>
-            </td>
-          </tr>
-        );
-      case 10:
-        return (
-          <tr>
-            <td className="d">
-              <small className="gray">{Setting.getFormattedDate(record?.createdTime)}</small>
-            </td>
-            <td className="d">{i18next.t("balance:Admin revision")}</td>
-            <td className="d" style={{textAlign: "right"}}>
-              <span className="positive">
-                <strong>{record?.amount + ".0"}</strong>
-              </span>
-            </td>
-            <td className="d" style={{textAlign: "right"}}>
-              {record?.balance + ".0"}
-            </td>
-            <td className="d" style={{borderRight: "none"}}>
-              <span className="gray">
-                {i18next.t("balance:Admin")} <Link to={`/member/${record?.consumerId}`}>{record?.consumerId}</Link> {i18next.t("balance:Add balance")} {Math.abs(record?.amount)} {i18next.t("balance:copper")}
-              </span>
-            </td>
-          </tr>
-        );
-      case 11:
-        return (
-          <tr>
-            <td className="d">
-              <small className="gray">{Setting.getFormattedDate(record?.createdTime)}</small>
-            </td>
-            <td className="d">{i18next.t("balance:Admin revision")}</td>
-            <td className="d" style={{textAlign: "right"}}>
-              <span className="negative">
-                <strong>{record?.amount + ".0"}</strong>
-              </span>
-            </td>
-            <td className="d" style={{textAlign: "right"}}>
-              {record?.balance + ".0"}
-            </td>
-            <td className="d" style={{borderRight: "none"}}>
-              <span className="gray">
-                {i18next.t("balance:Admin")} <Link to={`/member/${record?.consumerId}`}>{record?.consumerId}</Link> {i18next.t("balance:Reduce balance")} {Math.abs(record?.amount)} {i18next.t("balance:copper")}
-              </span>
-            </td>
-          </tr>
-        );
-      default:
-        return null;
+    case 1:
+      return (
+        <tr>
+          <td className="d">
+            <small className="gray">{Setting.getFormattedDate(record?.createdTime)}</small>
+          </td>
+          <td className="d">{i18next.t("balance:Checkin bonus")}</td>
+          <td className="d" style={{textAlign: "right"}}>
+            <span className="positive">
+              <strong>{record?.amount + ".0"}</strong>
+            </span>
+          </td>
+          <td className="d" style={{textAlign: "right"}}>
+            {record?.balance + ".0"}
+          </td>
+          <td className="d" style={{borderRight: "none"}}>
+            <span className="gray">
+              {record?.createdTime.replace(/-/g, "").substring(0, 8)} {i18next.t("balance:'s daily checkin bonus")} {record?.amount} {i18next.t("balance:copper")}
+            </span>
+          </td>
+        </tr>
+      );
+    case 2:
+      return (
+        <tr>
+          <td className="d">
+            <small className="gray">{Setting.getFormattedDate(record?.createdTime)}</small>
+          </td>
+          <td className="d">{i18next.t("balance:Received thanks")}</td>
+          <td className="d" style={{textAlign: "right"}}>
+            <span className="positive">
+              <strong>{record?.amount + ".0"}</strong>
+            </span>
+          </td>
+          <td className="d" style={{textAlign: "right"}}>
+            {record?.balance + ".0"}
+          </td>
+          <td className="d" style={{borderRight: "none"}}>
+            <span className="gray">
+              <Link to={`/member/${record?.consumerId}`}>{record?.consumerId}</Link> {i18next.t("balance:Thanks your topic")} › <Link to={`/t/${record?.objectId}`}>{pangu.spacing(record?.title)}</Link>
+            </span>
+          </td>
+        </tr>
+      );
+    case 3:
+      return (
+        <tr>
+          <td className="d">
+            <small className="gray">{Setting.getFormattedDate(record?.createdTime)}</small>
+          </td>
+          <td className="d">{i18next.t("balance:Received thanks")}</td>
+          <td className="d" style={{textAlign: "right"}}>
+            <span className="positive">
+              <strong>{record?.amount + ".0"}</strong>
+            </span>
+          </td>
+          <td className="d" style={{textAlign: "right"}}>
+            {record?.balance + ".0"}
+          </td>
+          <td className="d" style={{borderRight: "none"}}>
+            <span className="gray">
+              <Link to={`/member/${record?.consumerId}`}>{record?.consumerId}</Link> {i18next.t("balance:Thanks your reply in")} <Link to={`/t/${record?.objectId}`}>{pangu.spacing(record?.title)}</Link> {i18next.t("balance:Reply in")}
+            </span>
+          </td>
+        </tr>
+      );
+    case 4:
+      return (
+        <tr>
+          <td className="d">
+            <small className="gray">{Setting.getFormattedDate(record?.createdTime)}</small>
+          </td>
+          <td className="d">{i18next.t("balance:Send thanks")}</td>
+          <td className="d" style={{textAlign: "right"}}>
+            <span className="negative">
+              <strong>{record?.amount + ".0"}</strong>
+            </span>
+          </td>
+          <td className="d" style={{textAlign: "right"}}>
+            {record?.balance + ".0"}
+          </td>
+          <td className="d" style={{borderRight: "none"}}>
+            <span className="gray">
+              {i18next.t("balance:Thanks")} <Link to={`/member/${record?.consumerId}`}>{record?.consumerId}</Link> {i18next.t("balance:'s topic")} › <Link to={`/t/${record?.objectId}`}>{pangu.spacing(record?.title)}</Link>
+            </span>
+          </td>
+        </tr>
+      );
+    case 5:
+      return (
+        <tr>
+          <td className="d">
+            <small className="gray">{Setting.getFormattedDate(record?.createdTime)}</small>
+          </td>
+          <td className="d">{i18next.t("balance:Send thanks")}</td>
+          <td className="d" style={{textAlign: "right"}}>
+            <span className="negative">
+              <strong>{record?.amount + ".0"}</strong>
+            </span>
+          </td>
+          <td className="d" style={{textAlign: "right"}}>
+            {record?.balance + ".0"}
+          </td>
+          <td className="d" style={{borderRight: "none"}}>
+            <span className="gray">
+              {i18next.t("balance:Thanks")} <Link to={`/member/${record?.consumerId}`}>{record?.consumerId}</Link> {i18next.t("balance:'s reply")} › <Link to={`t/${record?.objectId}`}>{pangu.spacing(record?.title)}</Link>
+            </span>
+          </td>
+        </tr>
+      );
+    case 6:
+      return (
+        <tr>
+          <td className="d">
+            <small className="gray">{Setting.getFormattedDate(record?.createdTime)}</small>
+          </td>
+          <td className="d">{i18next.t("balance:Create reply")}</td>
+          <td className="d" style={{textAlign: "right"}}>
+            <span className="negative">
+              <strong>{record?.amount + ".0"}</strong>
+            </span>
+          </td>
+          <td className="d" style={{textAlign: "right"}}>
+            {record?.balance + ".0"}
+          </td>
+          <td className="d" style={{borderRight: "none"}}>
+            <span className="gray">
+              {i18next.t("balance:Created a")} {record?.length} {i18next.t("balance:characters reply")} › <Link to={`t/${record?.objectId}`}>{pangu.spacing(record?.title)}</Link>
+            </span>
+          </td>
+        </tr>
+      );
+    case 7:
+      return (
+        <tr>
+          <td className="d">
+            <small className="gray">{Setting.getFormattedDate(record?.createdTime)}</small>
+          </td>
+          <td className="d">{i18next.t("balance:Topic response bonus")}</td>
+          <td className="d" style={{textAlign: "right"}}>
+            <span className="positive">
+              <strong>{record?.amount + ".0"}</strong>
+            </span>
+          </td>
+          <td className="d" style={{textAlign: "right"}}>
+            {record?.balance + ".0"}
+          </td>
+          <td className="d" style={{borderRight: "none"}}>
+            <span className="gray">
+              {i18next.t("balance:receive")} <Link to={`/member/${record?.consumerId}`}>{record?.consumerId}</Link> {i18next.t("balance:'s reply")} › <Link to={`t/${record?.objectId}`}>{pangu.spacing(record?.title)}</Link>
+            </span>
+          </td>
+        </tr>
+      );
+    case 8:
+      return (
+        <tr>
+          <td className="d">
+            <small className="gray">{Setting.getFormattedDate(record?.createdTime)}</small>
+          </td>
+          <td className="d">{i18next.t("balance:Create topic")}</td>
+          <td className="d" style={{textAlign: "right"}}>
+            <span className="negative">
+              <strong>{record?.amount + ".0"}</strong>
+            </span>
+          </td>
+          <td className="d" style={{textAlign: "right"}}>
+            {record?.balance + ".0"}
+          </td>
+          <td className="d" style={{borderRight: "none"}}>
+            <span className="gray">
+              {i18next.t("balance:Created a")} {record?.length} {i18next.t("balance:characters topic")} › <Link to={`t/${record?.objectId}`}>{pangu.spacing(record?.title)}</Link>
+            </span>
+          </td>
+        </tr>
+      );
+    case 9:
+      return (
+        <tr>
+          <td className="d">
+            <small className="gray">{Setting.getFormattedDate(record?.createdTime)}</small>
+          </td>
+          <td className="d">{i18next.t("balance:Top topic")}</td>
+          <td className="d" style={{textAlign: "right"}}>
+            <span className="negative">
+              <strong>{record?.amount + ".0"}</strong>
+            </span>
+          </td>
+          <td className="d" style={{textAlign: "right"}}>
+            {record?.balance + ".0"}
+          </td>
+          <td className="d" style={{borderRight: "none"}}>
+            <span className="gray">
+              {i18next.t("balance:Topped topic")} <Link to={`t/${record?.objectId}`}>{pangu.spacing(record?.title)}</Link> {i18next.t("balance:Pin it to the top")}
+            </span>
+          </td>
+        </tr>
+      );
+    case 10:
+      return (
+        <tr>
+          <td className="d">
+            <small className="gray">{Setting.getFormattedDate(record?.createdTime)}</small>
+          </td>
+          <td className="d">{i18next.t("balance:Admin revision")}</td>
+          <td className="d" style={{textAlign: "right"}}>
+            <span className="positive">
+              <strong>{record?.amount + ".0"}</strong>
+            </span>
+          </td>
+          <td className="d" style={{textAlign: "right"}}>
+            {record?.balance + ".0"}
+          </td>
+          <td className="d" style={{borderRight: "none"}}>
+            <span className="gray">
+              {i18next.t("balance:Admin")} <Link to={`/member/${record?.consumerId}`}>{record?.consumerId}</Link> {i18next.t("balance:Add balance")} {Math.abs(record?.amount)} {i18next.t("balance:copper")}
+            </span>
+          </td>
+        </tr>
+      );
+    case 11:
+      return (
+        <tr>
+          <td className="d">
+            <small className="gray">{Setting.getFormattedDate(record?.createdTime)}</small>
+          </td>
+          <td className="d">{i18next.t("balance:Admin revision")}</td>
+          <td className="d" style={{textAlign: "right"}}>
+            <span className="negative">
+              <strong>{record?.amount + ".0"}</strong>
+            </span>
+          </td>
+          <td className="d" style={{textAlign: "right"}}>
+            {record?.balance + ".0"}
+          </td>
+          <td className="d" style={{borderRight: "none"}}>
+            <span className="gray">
+              {i18next.t("balance:Admin")} <Link to={`/member/${record?.consumerId}`}>{record?.consumerId}</Link> {i18next.t("balance:Reduce balance")} {Math.abs(record?.amount)} {i18next.t("balance:copper")}
+            </span>
+          </td>
+        </tr>
+      );
+    default:
+      return null;
     }
   }
 

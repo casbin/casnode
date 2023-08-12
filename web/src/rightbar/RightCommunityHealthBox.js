@@ -68,6 +68,7 @@ class RightCommunityHealthBox extends React.Component {
     return (
       <React.Fragment>
         <div className="box">
+          {/* eslint-disable-next-line react/no-unknown-property */}
           <div className="inner" align="center">
             <a href={this.state.poster["link"]} target="_blank" rel="noopener noreferrer">
               <img src={this.state.poster["picture_link"]} border="0" width="250" alt={this.state.poster["advertiser"]} style={{vertical: "bottom"}} />

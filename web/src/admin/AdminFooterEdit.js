@@ -51,7 +51,6 @@ class AdminFrontConf extends React.Component {
 
   getContent(id) {
     ConfBackend.getFrontConfById(id).then((res) => {
-      console.log(res.data.value);
       this.setState({
         content: res.data.value,
       });
@@ -77,6 +76,7 @@ class AdminFrontConf extends React.Component {
 
   getFrontConf(id) {
     ConfBackend.getFrontConfById(id).then((res) => {
+      // eslint-disable-next-line no-console
       console.log(res.data[0]);
     });
   }
