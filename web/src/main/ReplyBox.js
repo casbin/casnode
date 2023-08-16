@@ -28,6 +28,7 @@ import UserLink from "../UserLink";
 
 // const pangu = require("pangu");
 const maxReplyDepth = Setting.PcBrowser ? Conf.ReplyMaxDepth : Conf.ReplyMobileMaxDepth;
+window.process = {cwd: () => ""};
 
 class ReplyBox extends React.Component {
   constructor(props) {

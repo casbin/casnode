@@ -27,6 +27,8 @@ import i18next from "i18next";
 import * as Conf from "../Conf";
 import {Helmet} from "react-helmet";
 
+window.process = {cwd: () => ""};
+
 class NodeBox extends React.Component {
   constructor(props) {
     super(props);

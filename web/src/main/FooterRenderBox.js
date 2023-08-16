@@ -20,6 +20,7 @@ import "./NoMatch.css";
 import i18next from "i18next";
 import {Helmet} from "react-helmet";
 import ReactMarkdown from "react-markdown";
+window.process = {cwd: () => ""};
 
 class NoMatch extends React.Component {
   constructor(props) {

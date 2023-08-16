@@ -32,6 +32,7 @@ import * as Conf from "../Conf";
 require("codemirror/mode/markdown/markdown");
 
 const ReactMarkdown = require("react-markdown");
+window.process = {cwd: () => ""};
 
 class NewNodeTopicBox extends React.Component {
   constructor(props) {

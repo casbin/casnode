@@ -23,6 +23,8 @@ import Zmage from "react-zmage";
 import i18next from "i18next";
 import * as Conf from "../Conf";
 
+window.process = {cwd: () => ""};
+
 class AdminTopic extends React.Component {
   constructor(props) {
     super(props);
