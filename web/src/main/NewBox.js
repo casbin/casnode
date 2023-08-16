@@ -33,6 +33,7 @@ import {Helmet} from "react-helmet";
 require("codemirror/mode/markdown/markdown");
 
 const ReactMarkdown = require("react-markdown");
+window.process = {cwd: () => ""};
 
 class NewBox extends React.Component {
   constructor(props) {

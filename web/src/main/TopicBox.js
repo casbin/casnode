@@ -35,6 +35,8 @@ require("codemirror/mode/markdown/markdown");
 const ReactMarkdown = require("react-markdown");
 const pangu = require("pangu");
 
+window.process = {cwd: () => ""};
+
 class TopicBox extends React.Component {
   constructor(props) {
     super(props);

@@ -21,6 +21,7 @@ import i18next from "i18next";
 
 const ReactMarkdown = require("react-markdown");
 const pangu = require("pangu");
+window.process = {cwd: () => ""};
 
 class LatestReplyBox extends React.Component {
   constructor(props) {

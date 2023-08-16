@@ -25,6 +25,7 @@ import i18next from "i18next";
 import {Helmet} from "react-helmet";
 
 const pangu = require("pangu");
+window.process = {cwd: () => ""};
 
 class NotificationBox extends React.Component {
   constructor(props) {

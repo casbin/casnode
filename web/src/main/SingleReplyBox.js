@@ -23,6 +23,8 @@ import UserLink from "../UserLink";
 import {Helmet} from "react-helmet";
 import Zmage from "react-zmage";
 
+window.process = {cwd: () => ""};
+
 class SingleReplyBox extends React.Component {
   constructor(props) {
     super(props);
