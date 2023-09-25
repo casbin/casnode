@@ -191,7 +191,6 @@ func AddMemberByNameAndEmailIfNotExist(username, email string) (*casdoorsdk.User
 			Ranking:           GetMemberNum() + 1,
 			IsOnline:          false,
 			IsAdmin:           false,
-			IsGlobalAdmin:     false,
 			IsForbidden:       false,
 			SignupApplication: CasdoorApplication,
 			Properties:        properties,

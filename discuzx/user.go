@@ -53,7 +53,6 @@ func getUserFromMember(memberEx *MemberEx) *casdoorsdk.User {
 		Ranking:           memberEx.Member.Uid,
 		IsOnline:          false,
 		IsAdmin:           false,
-		IsGlobalAdmin:     false,
 		IsForbidden:       false,
 		IsDeleted:         false,
 		SignupApplication: CasdoorApplication,
