@@ -13,8 +13,8 @@
 // limitations under the License.
 
 export const AuthConfig = {
-  // serverUrl: "https://door.casbin.com",
-  serverUrl: "http://localhost:7001",
+  serverUrl: "https://door.casdoor.com",
+  // serverUrl: "http://localhost:7001",
   clientId: "014ae4bd048734ca2dea",
   organizationName: "casbin",
   appName: "app-casnode",
