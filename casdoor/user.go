@@ -14,7 +14,11 @@
 
 package casdoor
 
-import "github.com/casdoor/casdoor-go-sdk/casdoorsdk"
+import (
+	"fmt"
+
+	"github.com/casdoor/casdoor-go-sdk/casdoorsdk"
+)
 
 func GetUsers() []*casdoorsdk.User {
 	if adapter != nil {
@@ -61,7 +65,8 @@ func GetOnlineUserCount() int {
 	} else {
 		count, err := casdoorsdk.GetUserCount("1")
 		if err != nil {
-			panic(err)
+			fmt.Printf("GetOnlineUserCount() error, %s\n", err.Error())
+			return -1
 		}
 
 		return count
