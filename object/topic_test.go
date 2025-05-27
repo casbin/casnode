@@ -18,6 +18,9 @@ import (
 	"fmt"
 	"strconv"
 	"testing"
+
+	"github.com/casbin/casnode/conf"
+	"github.com/casbin/casnode/service"
 )
 
 func TestSyncTopicReplyCount(t *testing.T) {
@@ -69,4 +72,23 @@ func TestSyncTopicSubscribeCount(t *testing.T) {
 		}
 	}
 	fmt.Println("Synced SubscribeCount of all topics!")
+}
+
+func TestTopicTag(t *testing.T) {
+	topics := []*Topic{}
+	adapter = NewAdapter(conf.GetConfigString("driverName"), conf.GetConfigString("dataSourceName"), conf.GetConfigString("dbName"))
+	err := adapter.Engine.Table("topic").Find(&topics)
+	if err != nil {
+		panic(err)
+	}
+
+	for _, topic := range topics {
+		if len(topic.Tags) == 0 || topic.Tags == nil {
+			topic.Tags = service.Finalword(topic.Content)
+			_, err = adapter.Engine.Id(topic.Id).Update(topic)
+			if err != nil {
+				panic(err)
+			}
+		}
+	}
 }
