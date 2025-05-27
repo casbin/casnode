@@ -44,7 +44,8 @@ func main() {
 	}))
 
 	// beego.DelStaticPath("/static")
-	beego.SetStaticPath("/static", "web/build/static")
+	// beego.SetStaticPath("/static", "web/build/static")
+
 	beego.SetStaticPath("/swagger", "swagger")
 	beego.BConfig.WebConfig.DirectoryIndex = true
 

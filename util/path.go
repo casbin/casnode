@@ -26,6 +26,14 @@ func FileExist(path string) bool {
 	return true
 }
 
+func FolderExist(path string) bool {
+	info, err := os.Stat(path)
+	if os.IsNotExist(err) {
+		return false
+	}
+	return info.IsDir()
+}
+
 func ListFiles(path string) []string {
 	res := []string{}
 

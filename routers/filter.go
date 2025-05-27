@@ -36,6 +36,11 @@ func Static(ctx *context.Context) {
 		path += urlPath
 	}
 
+	if util.FolderExist(path) {
+		ctx.ResponseWriter.WriteHeader(http.StatusForbidden)
+		return
+	}
+
 	if util.FileExist(path) {
 		if path == "web/build/index.html" {
 			FreshAccountActiveStatus(ctx)
